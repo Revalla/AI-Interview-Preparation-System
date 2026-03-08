@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Details - AI Interview Preparation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-search"></i> Interview Details</h1>
+            <nav class="nav-links">
+                <a href="{{ url_for('dashboard') }}" class="btn nav-btn">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="{{ url_for('interview_history') }}" class="btn nav-btn">
+                    <i class="fas fa-history"></i> History
+                </a>
+                <a href="{{ url_for('logout') }}" class="btn logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </header>
+
+        <div class="details-container">
+            <div class="interview-header-card">
+                <div class="header-left">
+                    <h2>{{ interview.role }}</h2>
+                    <p class="timestamp"><i class="fas fa-calendar-alt"></i> {{ interview.timestamp }}</p>
+                </div>
+                <div class="header-right">
+                    <div class="overall-score">
+                        <div class="score-circle">
+                            <span class="score-number">{{ "%.1f"|format(interview.overall_score) }}</span>
+                            <span class="score-label">/ 10</span>
+                        </div>
+                    </div>
+                    <span class="difficulty-badge difficulty-{{ interview.difficulty.lower() }}">
+                        {{ interview.difficulty }}
+                    </span>
+                </div>
+            </div>
+
+            {% if feedback %}
+            <div class="feedback-card">
+                <h3><i class="fas fa-star"></i> Overall Feedback</h3>
+                {% if feedback.overall_score %}
+                <div class="feedback-section">
+                    <label>Overall Score:</label>
+                    <p>{{ feedback.overall_score }}/10</p>
+                </div>
+                {% endif %}
+                
+                {% if feedback.strengths %}
+                <div class="feedback-section">
+                    <label><i class="fas fa-thumbs-up"></i> Strengths:</label>
+                    <p>{{ feedback.strengths }}</p>
+                </div>
+                {% endif %}
+                
+                {% if feedback.weaknesses %}
+                <div class="feedback-section">
+                    <label><i class="fas fa-exclamation-triangle"></i> Weaknesses:</label>
+                    <p>{{ feedback.weaknesses }}</p>
+                </div>
+                {% endif %}
+                
+                {% if feedback.suggestions %}
+                <div class="feedback-section">
+                    <label><i class="fas fa-lightbulb"></i> Suggestions:</label>
+                    <p>{{ feedback.suggestions }}</p>
+                </div>
+                {% endif %}
+                
+                {% if feedback.study_areas %}
+                <div class="feedback-section">
+                    <label><i class="fas fa-book"></i> Study Areas:</label>
+                    <p>{{ feedback.study_areas }}</p>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <div class="questions-section">
+                <h3><i class="fas fa-list-ol"></i> Questions & Answers</h3>
+                {% for i in range(questions|length) %}
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <h4><i class="fas fa-question"></i> Question {{ i + 1 }}</h4>
+                        <span class="score-badge">Score: {{ scores[i] if i < scores|length else 'N/A' }}/10</span>
+                    </div>
+                    
+                    <div class="qa-content">
+                        <div class="question-section">
+                            <label><strong>Question:</strong></label>
+                            <p>{{ questions[i] }}</p>
+                        </div>
+                        
+                        <div class="answer-section">
+                            <label><strong>Your Answer:</strong></label>
+                            <p>{{ answers[i] if i < answers|length else 'No answer provided' }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="actions">
+                <a href="{{ url_for('interview_history') }}" class="btn back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to History
+                </a>
+                <a href="{{ url_for('dashboard') }}" class="btn start-btn">
+                    <i class="fas fa-play-circle"></i> Practice Again
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .interview-header-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-left h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .timestamp {
+            color: #999;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .overall-score {
+            display: flex;
+            align-items: center;
+        }
+
+        .score-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linearGradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .score-number {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .score-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .difficulty-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .difficulty-easy {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .difficulty-medium {
+            background: #ffe0b2;
+            color: #e65100;
+        }
+
+        .difficulty-hard {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .feedback-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .feedback-card h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .feedback-section {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #2196F3;
+            border-radius: 4px;
+        }
+
+        .feedback-section label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .feedback-section p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .questions-section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .questions-section h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .qa-card {
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .qa-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .qa-header h4 {
+            margin: 0;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .score-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .qa-content {
+            margin-top: 15px;
+        }
+
+        .question-section, .answer-section {
+            margin-bottom: 15px;
+        }
+
+        .question-section label, .answer-section label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .question-section p, .answer-section p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .back-btn {
+            background: #666;
+            color: white;
+        }
+
+        .back-btn:hover {
+            background: #555;
+        }
+
+        @media (max-width: 768px) {
+            .interview-header-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .header-right {
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

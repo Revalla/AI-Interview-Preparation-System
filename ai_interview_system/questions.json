@@ -1,0 +1,965 @@
+{
+  "AI/ML Engineer": {
+    "Easy": {
+      "technical": [
+        "What is machine learning?",
+        "Explain the difference between supervised and unsupervised learning.",
+        "What is overfitting in machine learning?",
+        "What is a neural network?",
+        "What is the purpose of activation functions in neural networks?"
+      ],
+      "hr": [
+        "Why do you want to work in AI/ML?",
+        "Tell me about a time you worked on a team project.",
+        "What are your career goals?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How does gradient descent work?",
+        "Explain the bias-variance tradeoff.",
+        "What is cross-validation?",
+        "Describe the architecture of a convolutional neural network.",
+        "How do you handle imbalanced datasets?"
+      ],
+      "hr": [
+        "How do you stay updated with the latest AI/ML trends?",
+        "Describe a challenging project you worked on.",
+        "What motivates you in your work?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "Explain the mathematics behind backpropagation.",
+        "How do you optimize a machine learning model?",
+        "Describe reinforcement learning.",
+        "What is transfer learning?",
+        "How do you evaluate the performance of a deep learning model?"
+      ],
+      "hr": [
+        "How would you handle a disagreement with a colleague on a technical decision?",
+        "What is your approach to mentoring junior team members?",
+        "How do you balance innovation with project deadlines?"
+      ]
+    }
+  },
+  "Data Scientist": {
+    "Easy": {
+      "technical": [
+        "What is data science?",
+        "Explain descriptive statistics.",
+        "What is a data frame?",
+        "What is data cleaning?",
+        "What is the difference between mean and median?"
+      ],
+      "hr": [
+        "Why are you interested in data science?",
+        "Tell me about your experience with data analysis.",
+        "What skills do you bring to a data science role?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you handle missing data?",
+        "Explain A/B testing.",
+        "What is feature engineering?",
+        "How do you perform exploratory data analysis?",
+        "What is the difference between correlation and causation?"
+      ],
+      "hr": [
+        "How do you communicate complex data insights to non-technical stakeholders?",
+        "Describe a time you had to learn a new tool quickly.",
+        "What is your process for prioritizing tasks?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "Describe the process of building a predictive model.",
+        "How do you evaluate model performance?",
+        "Explain time series analysis.",
+        "What is dimensionality reduction?",
+        "How do you handle big data challenges?"
+      ],
+      "hr": [
+        "How would you approach a project with conflicting stakeholder requirements?",
+        "What strategies do you use for continuous learning in a fast-evolving field?",
+        "How do you ensure data privacy and ethics in your work?"
+      ]
+    }
+  },
+  "Software Developer": {
+    "Easy": {
+      "technical": [
+        "What is object-oriented programming?",
+        "Explain the difference between a class and an object.",
+        "What is version control?",
+        "What is a compiler?",
+        "What is the difference between interpreted and compiled languages?"
+      ],
+      "hr": [
+        "Why do you want to be a software developer?",
+        "Tell me about a coding project you're proud of.",
+        "What programming languages are you proficient in?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How does garbage collection work in Java?",
+        "Explain RESTful APIs.",
+        "What are design patterns?",
+        "How do you debug a program?",
+        "What is the difference between SQL and NoSQL databases?"
+      ],
+      "hr": [
+        "How do you approach problem-solving in coding?",
+        "Describe your experience with agile development.",
+        "How do you handle tight deadlines?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "Describe the CAP theorem.",
+        "How do you optimize database queries?",
+        "Explain microservices architecture.",
+        "What is concurrency and how do you handle it?",
+        "How do you ensure code security?"
+      ],
+      "hr": [
+        "How would you design a scalable software system?",
+        "What is your approach to code reviews?",
+        "How do you stay motivated during long debugging sessions?"
+      ]
+    }
+  },
+  "Frontend Developer": {
+    "Easy": {
+      "technical": [
+        "What is HTML?",
+        "What is CSS?",
+        "What is JavaScript?",
+        "What is the DOM?",
+        "What is responsive design?"
+      ],
+      "hr": [
+        "Why do you want to be a frontend developer?",
+        "Tell me about your experience with web development.",
+        "What frontend frameworks are you familiar with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you optimize website performance?",
+        "Explain CSS Grid vs Flexbox.",
+        "What is AJAX?",
+        "How do you handle browser compatibility?",
+        "What is a single-page application?"
+      ],
+      "hr": [
+        "How do you ensure accessibility in your designs?",
+        "Describe your process for creating user interfaces.",
+        "How do you collaborate with backend developers?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you implement state management in a complex frontend application?",
+        "Explain the virtual DOM in React.",
+        "How do you handle security in frontend applications?",
+        "What is progressive web app development?",
+        "How do you optimize bundle size?"
+      ],
+      "hr": [
+        "How would you approach redesigning a legacy frontend system?",
+        "What strategies do you use for continuous improvement of frontend skills?",
+        "How do you balance design aesthetics with functionality?"
+      ]
+    }
+  },
+  "Backend Developer": {
+    "Easy": {
+      "technical": [
+        "What is a server?",
+        "What is an API?",
+        "What is a database?",
+        "What is HTTP?",
+        "What is middleware?"
+      ],
+      "hr": [
+        "Why do you want to be a backend developer?",
+        "Tell me about your experience with server-side development.",
+        "What backend languages are you proficient in?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you handle authentication?",
+        "Explain database normalization.",
+        "What is caching?",
+        "How do you implement logging?",
+        "What is REST vs GraphQL?"
+      ],
+      "hr": [
+        "How do you ensure data security?",
+        "Describe your experience with deployment.",
+        "How do you handle database migrations?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a scalable backend architecture?",
+        "Explain microservices communication.",
+        "How do you handle distributed systems?",
+        "What is containerization?",
+        "How do you implement rate limiting?"
+      ],
+      "hr": [
+        "How would you troubleshoot a production issue?",
+        "What is your approach to API versioning?",
+        "How do you balance performance with maintainability?"
+      ]
+    }
+  },
+  "Full Stack Developer": {
+    "Easy": {
+      "technical": [
+        "What is full stack development?",
+        "What is the MERN stack?",
+        "What is version control?",
+        "What is a web server?",
+        "What is a database schema?"
+      ],
+      "hr": [
+        "Why do you want to be a full stack developer?",
+        "Tell me about a full stack project you've worked on.",
+        "What technologies are you comfortable with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you handle state management in full stack apps?",
+        "Explain API design principles.",
+        "What is CI/CD?",
+        "How do you optimize database queries?",
+        "What is containerization?"
+      ],
+      "hr": [
+        "How do you coordinate between frontend and backend teams?",
+        "Describe your deployment process.",
+        "How do you handle cross-functional requirements?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a scalable full stack architecture?",
+        "Explain event-driven architecture.",
+        "How do you implement security across the stack?",
+        "What is serverless computing?",
+        "How do you handle real-time features?"
+      ],
+      "hr": [
+        "How would you architect a complex web application?",
+        "What strategies do you use for keeping up with multiple technologies?",
+        "How do you ensure code quality across the stack?"
+      ]
+    }
+  },
+  "Data Analyst": {
+    "Easy": {
+      "technical": [
+        "What is data analysis?",
+        "What is Excel?",
+        "What is SQL?",
+        "What is a pivot table?",
+        "What is data visualization?"
+      ],
+      "hr": [
+        "Why do you want to be a data analyst?",
+        "Tell me about your experience with data tools.",
+        "What analytical skills do you have?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you clean data?",
+        "Explain data aggregation.",
+        "What is a dashboard?",
+        "How do you perform trend analysis?",
+        "What is ETL?"
+      ],
+      "hr": [
+        "How do you present data insights?",
+        "Describe a data project you've completed.",
+        "How do you validate data accuracy?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you handle large datasets?",
+        "Explain predictive analytics.",
+        "What is data warehousing?",
+        "How do you implement data governance?",
+        "What is machine learning in data analysis?"
+      ],
+      "hr": [
+        "How would you approach a complex data problem?",
+        "What strategies do you use for data storytelling?",
+        "How do you ensure data privacy compliance?"
+      ]
+    }
+  },
+  "DevOps Engineer": {
+    "Easy": {
+      "technical": [
+        "What is DevOps?",
+        "What is CI/CD?",
+        "What is a version control system?",
+        "What is a container?",
+        "What is infrastructure as code?"
+      ],
+      "hr": [
+        "Why do you want to be a DevOps engineer?",
+        "Tell me about your experience with automation.",
+        "What tools are you familiar with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you set up a CI/CD pipeline?",
+        "Explain container orchestration.",
+        "What is monitoring?",
+        "How do you handle configuration management?",
+        "What is cloud computing?"
+      ],
+      "hr": [
+        "How do you ensure system reliability?",
+        "Describe your experience with deployment.",
+        "How do you collaborate with development teams?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a scalable infrastructure?",
+        "Explain site reliability engineering.",
+        "How do you handle security in DevOps?",
+        "What is chaos engineering?",
+        "How do you optimize cloud costs?"
+      ],
+      "hr": [
+        "How would you troubleshoot a production outage?",
+        "What is your approach to incident response?",
+        "How do you balance speed and stability?"
+      ]
+    }
+  },
+  "Cyber Security Analyst": {
+    "Easy": {
+      "technical": [
+        "What is cybersecurity?",
+        "What is a firewall?",
+        "What is encryption?",
+        "What is a virus?",
+        "What is phishing?"
+      ],
+      "hr": [
+        "Why do you want to work in cybersecurity?",
+        "Tell me about your security awareness.",
+        "What security certifications do you have?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you perform vulnerability assessment?",
+        "Explain network security.",
+        "What is penetration testing?",
+        "How do you implement access control?",
+        "What is incident response?"
+      ],
+      "hr": [
+        "How do you stay updated with security threats?",
+        "Describe a security incident you've handled.",
+        "How do you educate users about security?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a secure network architecture?",
+        "Explain advanced persistent threats.",
+        "How do you implement zero-trust security?",
+        "What is cryptography?",
+        "How do you handle compliance requirements?"
+      ]
+    }
+  },
+  "Product Manager": {
+    "Easy": {
+      "technical": [
+        "What is product management?",
+        "What is a product roadmap?",
+        "What is user research?",
+        "What is a minimum viable product (MVP)?",
+        "What is agile methodology?"
+      ],
+      "hr": [
+        "Why do you want to be a product manager?",
+        "Tell me about your experience with product development.",
+        "What skills do you bring to product management?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you prioritize product features?",
+        "Explain the product development lifecycle.",
+        "What is A/B testing in product management?",
+        "How do you measure product success?",
+        "What is user story mapping?"
+      ],
+      "hr": [
+        "How do you handle conflicting stakeholder requirements?",
+        "Describe your experience with cross-functional teams.",
+        "How do you communicate product vision to engineering teams?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you build and maintain a product strategy?",
+        "Explain market analysis and competitive positioning.",
+        "How do you handle product pivots?",
+        "What is product-market fit?",
+        "How do you scale a product organization?"
+      ],
+      "hr": [
+        "How would you handle a failed product launch?",
+        "What strategies do you use for stakeholder management?",
+        "How do you balance short-term goals with long-term vision?"
+      ]
+    }
+  },
+  "UX/UI Designer": {
+    "Easy": {
+      "technical": [
+        "What is UX design?",
+        "What is UI design?",
+        "What is user research?",
+        "What is a wireframe?",
+        "What is a prototype?"
+      ],
+      "hr": [
+        "Why do you want to be a UX/UI designer?",
+        "Tell me about your design process.",
+        "What design tools are you proficient in?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you conduct user research?",
+        "Explain the difference between UX and UI.",
+        "What is information architecture?",
+        "How do you create user personas?",
+        "What is usability testing?"
+      ],
+      "hr": [
+        "How do you collaborate with developers?",
+        "Describe your experience with design systems.",
+        "How do you handle design feedback?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design for accessibility?",
+        "Explain interaction design principles.",
+        "How do you handle design scalability?",
+        "What is service design?",
+        "How do you measure design impact?"
+      ],
+      "hr": [
+        "How would you redesign a complex legacy system?",
+        "What strategies do you use for staying current with design trends?",
+        "How do you advocate for user needs in business decisions?"
+      ]
+    }
+  },
+  "QA Engineer": {
+    "Easy": {
+      "technical": [
+        "What is software testing?",
+        "What is a test case?",
+        "What is a bug report?",
+        "What is regression testing?",
+        "What is black box testing?"
+      ],
+      "hr": [
+        "Why do you want to be a QA engineer?",
+        "Tell me about your testing experience.",
+        "What testing tools are you familiar with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you write effective test cases?",
+        "Explain different types of testing.",
+        "What is test automation?",
+        "How do you perform API testing?",
+        "What is exploratory testing?"
+      ],
+      "hr": [
+        "How do you collaborate with developers?",
+        "Describe your experience with agile testing.",
+        "How do you prioritize testing tasks?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a testing strategy?",
+        "Explain performance testing methodologies.",
+        "How do you handle flaky tests?",
+        "What is continuous testing?",
+        "How do you measure test coverage effectiveness?"
+      ],
+      "hr": [
+        "How would you implement testing in a microservices architecture?",
+        "What strategies do you use for test automation at scale?",
+        "How do you balance quality with delivery speed?"
+      ]
+    }
+  },
+  "Data Engineer": {
+    "Easy": {
+      "technical": [
+        "What is data engineering?",
+        "What is ETL?",
+        "What is a data warehouse?",
+        "What is a data lake?",
+        "What is Apache Spark?"
+      ],
+      "hr": [
+        "Why do you want to be a data engineer?",
+        "Tell me about your experience with big data.",
+        "What data tools are you proficient in?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you design a data pipeline?",
+        "Explain data partitioning and sharding.",
+        "What is stream processing?",
+        "How do you handle data quality?",
+        "What is data governance?"
+      ],
+      "hr": [
+        "How do you collaborate with data scientists?",
+        "Describe your experience with cloud data platforms.",
+        "How do you optimize data processing performance?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a scalable data architecture?",
+        "Explain lambda vs kappa architecture.",
+        "How do you handle real-time data processing?",
+        "What is data mesh architecture?",
+        "How do you ensure data security and compliance?"
+      ],
+      "hr": [
+        "How would you migrate legacy data systems to modern platforms?",
+        "What strategies do you use for managing data engineering teams?",
+        "How do you balance data processing speed with cost?"
+      ]
+    }
+  },
+  "Cloud Engineer": {
+    "Easy": {
+      "technical": [
+        "What is cloud computing?",
+        "What are the main cloud service models?",
+        "What is AWS?",
+        "What is Azure?",
+        "What is Google Cloud Platform?"
+      ],
+      "hr": [
+        "Why do you want to be a cloud engineer?",
+        "Tell me about your cloud experience.",
+        "What cloud certifications do you have?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you design cloud architecture?",
+        "Explain serverless computing.",
+        "What is container orchestration?",
+        "How do you implement cloud security?",
+        "What is infrastructure as code?"
+      ],
+      "hr": [
+        "How do you handle cloud migration projects?",
+        "Describe your experience with multi-cloud environments.",
+        "How do you optimize cloud costs?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a highly available cloud system?",
+        "Explain cloud-native application development.",
+        "How do you implement disaster recovery?",
+        "What is cloud governance?",
+        "How do you handle cloud compliance?"
+      ],
+      "hr": [
+        "How would you architect a global cloud infrastructure?",
+        "What strategies do you use for cloud security at scale?",
+        "How do you balance innovation with cloud stability?"
+      ]
+    }
+  },
+  "Mobile App Developer": {
+    "Easy": {
+      "technical": [
+        "What is mobile app development?",
+        "What is iOS development?",
+        "What is Android development?",
+        "What is React Native?",
+        "What is Flutter?"
+      ],
+      "hr": [
+        "Why do you want to be a mobile developer?",
+        "Tell me about your app development experience.",
+        "What mobile platforms are you familiar with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you handle mobile app performance?",
+        "Explain mobile UI/UX principles.",
+        "What is app store optimization?",
+        "How do you implement push notifications?",
+        "What is mobile app testing?"
+      ],
+      "hr": [
+        "How do you handle different screen sizes?",
+        "Describe your experience with app publishing.",
+        "How do you stay updated with mobile trends?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you architect a scalable mobile app?",
+        "Explain offline-first mobile applications.",
+        "How do you handle mobile security?",
+        "What is progressive web apps?",
+        "How do you optimize mobile app performance?"
+      ],
+      "hr": [
+        "How would you handle a complex mobile app redesign?",
+        "What strategies do you use for mobile development at scale?",
+        "How do you balance user experience with technical constraints?"
+      ]
+    }
+  },
+  "System Administrator": {
+    "Easy": {
+      "technical": [
+        "What is system administration?",
+        "What is Linux?",
+        "What is Windows Server?",
+        "What is a server?",
+        "What is virtualization?"
+      ],
+      "hr": [
+        "Why do you want to be a system administrator?",
+        "Tell me about your server management experience.",
+        "What operating systems are you proficient in?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you manage server backups?",
+        "Explain network configuration.",
+        "What is monitoring and alerting?",
+        "How do you handle system security?",
+        "What is disaster recovery?"
+      ],
+      "hr": [
+        "How do you ensure system uptime?",
+        "Describe your experience with automation.",
+        "How do you handle emergency situations?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a scalable infrastructure?",
+        "Explain high availability systems.",
+        "How do you implement security best practices?",
+        "What is capacity planning?",
+        "How do you handle system migrations?"
+      ],
+      "hr": [
+        "How would you manage a large-scale infrastructure?",
+        "What strategies do you use for system reliability?",
+        "How do you balance security with usability?"
+      ]
+    }
+  },
+  "Business Analyst": {
+    "Easy": {
+      "technical": [
+        "What is business analysis?",
+        "What is requirements gathering?",
+        "What is a use case?",
+        "What is a user story?",
+        "What is SWOT analysis?"
+      ],
+      "hr": [
+        "Why do you want to be a business analyst?",
+        "Tell me about your analytical experience.",
+        "What tools do you use for analysis?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you conduct stakeholder interviews?",
+        "Explain requirements traceability.",
+        "What is gap analysis?",
+        "How do you create process flows?",
+        "What is data modeling?"
+      ],
+      "hr": [
+        "How do you manage changing requirements?",
+        "Describe your experience with agile methodologies.",
+        "How do you communicate with technical teams?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you analyze complex business processes?",
+        "Explain enterprise architecture frameworks.",
+        "How do you handle regulatory compliance?",
+        "What is business process reengineering?",
+        "How do you measure business value?"
+      ],
+      "hr": [
+        "How would you handle conflicting business requirements?",
+        "What strategies do you use for organizational change management?",
+        "How do you balance business needs with technical feasibility?"
+      ]
+    }
+  },
+  "Project Manager": {
+    "Easy": {
+      "technical": [
+        "What is project management?",
+        "What is a project charter?",
+        "What is a Gantt chart?",
+        "What is risk management?",
+        "What is stakeholder management?"
+      ],
+      "hr": [
+        "Why do you want to be a project manager?",
+        "Tell me about your project management experience.",
+        "What project management methodologies are you familiar with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you create a project plan?",
+        "Explain resource allocation.",
+        "What is earned value management?",
+        "How do you handle project risks?",
+        "What is change management?"
+      ],
+      "hr": [
+        "How do you motivate project teams?",
+        "Describe your experience with budget management.",
+        "How do you handle project conflicts?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you manage multiple complex projects?",
+        "Explain portfolio management.",
+        "How do you implement project governance?",
+        "What is agile project management at scale?",
+        "How do you measure project success?"
+      ],
+      "hr": [
+        "How would you turn around a failing project?",
+        "What strategies do you use for stakeholder engagement?",
+        "How do you balance scope, time, and cost?"
+      ]
+    }
+  },
+  "Technical Support Engineer": {
+    "Easy": {
+      "technical": [
+        "What is technical support?",
+        "What is a help desk?",
+        "What is troubleshooting?",
+        "What is customer service?",
+        "What is a knowledge base?"
+      ],
+      "hr": [
+        "Why do you want to work in technical support?",
+        "Tell me about your customer service experience.",
+        "What technical skills do you have?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you diagnose technical issues?",
+        "Explain escalation procedures.",
+        "What is root cause analysis?",
+        "How do you document solutions?",
+        "What is incident management?"
+      ],
+      "hr": [
+        "How do you handle difficult customers?",
+        "Describe your experience with remote support.",
+        "How do you prioritize support tickets?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design a support knowledge system?",
+        "Explain proactive problem resolution.",
+        "How do you handle complex technical escalations?",
+        "What is service level management?",
+        "How do you measure support effectiveness?"
+      ],
+      "hr": [
+        "How would you improve a support organization's efficiency?",
+        "What strategies do you use for team development?",
+        "How do you balance technical accuracy with customer satisfaction?"
+      ]
+    }
+  },
+  "Machine Learning Engineer": {
+    "Easy": {
+      "technical": [
+        "What is machine learning engineering?",
+        "What is model deployment?",
+        "What is MLOps?",
+        "What is feature engineering?",
+        "What is model training?"
+      ],
+      "hr": [
+        "Why do you want to be an ML engineer?",
+        "Tell me about your ML project experience.",
+        "What ML frameworks are you familiar with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you deploy ML models to production?",
+        "Explain model monitoring and maintenance.",
+        "What is A/B testing for ML models?",
+        "How do you handle model drift?",
+        "What is automated machine learning?"
+      ],
+      "hr": [
+        "How do you collaborate with data scientists?",
+        "Describe your experience with ML pipelines.",
+        "How do you ensure model reliability?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design scalable ML systems?",
+        "Explain distributed training of ML models.",
+        "How do you handle ML model security?",
+        "What is federated learning?",
+        "How do you optimize ML inference performance?"
+      ],
+      "hr": [
+        "How would you build an ML engineering team?",
+        "What strategies do you use for ML system reliability?",
+        "How do you balance model accuracy with inference speed?"
+      ]
+    }
+  },
+  "Blockchain Developer": {
+    "Easy": {
+      "technical": [
+        "What is blockchain?",
+        "What is a cryptocurrency?",
+        "What is Bitcoin?",
+        "What is Ethereum?",
+        "What is a smart contract?"
+      ],
+      "hr": [
+        "Why do you want to be a blockchain developer?",
+        "Tell me about your blockchain experience.",
+        "What blockchain platforms are you familiar with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you write smart contracts?",
+        "Explain consensus mechanisms.",
+        "What is decentralized finance (DeFi)?",
+        "How do you handle blockchain security?",
+        "What is token economics?"
+      ],
+      "hr": [
+        "How do you stay updated with blockchain developments?",
+        "Describe your experience with Web3 development.",
+        "How do you handle blockchain scalability issues?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you design blockchain architectures?",
+        "Explain layer 2 scaling solutions.",
+        "How do you implement cross-chain interoperability?",
+        "What is zero-knowledge proofs?",
+        "How do you ensure blockchain privacy?"
+      ],
+      "hr": [
+        "How would you approach blockchain adoption in enterprises?",
+        "What strategies do you use for blockchain security?",
+        "How do you balance decentralization with usability?"
+      ]
+    }
+  },
+  "Game Developer": {
+    "Easy": {
+      "technical": [
+        "What is game development?",
+        "What is Unity?",
+        "What is Unreal Engine?",
+        "What is game design?",
+        "What programming languages are used in game development?"
+      ],
+      "hr": [
+        "Why do you want to be a game developer?",
+        "Tell me about your game development experience.",
+        "What game engines are you familiar with?"
+      ]
+    },
+    "Medium": {
+      "technical": [
+        "How do you optimize game performance?",
+        "Explain game physics engines.",
+        "What is procedural generation?",
+        "How do you handle game AI?",
+        "What is cross-platform game development?"
+      ],
+      "hr": [
+        "How do you collaborate in game development teams?",
+        "Describe your experience with game publishing.",
+        "How do you balance gameplay with technical constraints?"
+      ]
+    },
+    "Hard": {
+      "technical": [
+        "How do you architect complex game systems?",
+        "Explain advanced rendering techniques.",
+        "How do you implement multiplayer networking?",
+        "What is game engine architecture?",
+        "How do you handle large-scale game worlds?"
+      ],
+      "hr": [
+        "How would you lead a game development project?",
+        "What strategies do you use for game monetization?",
+        "How do you balance innovation with market demands?"
+      ]
+    }
+  }
+}

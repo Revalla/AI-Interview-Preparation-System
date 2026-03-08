@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress - AI Interview Preparation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> Your Progress</h1>
+            <nav class="nav-links">
+                <a href="{{ url_for('dashboard') }}" class="btn nav-btn">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="{{ url_for('interview_history') }}" class="btn nav-btn">
+                    <i class="fas fa-history"></i> History
+                </a>
+                <a href="{{ url_for('logout') }}" class="btn logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </header>
+
+        <div class="progress-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total Interviews</h3>
+                        <p class="stat-value">{{ stats.total_interviews }}</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Average Score</h3>
+                        <p class="stat-value">{{ "%.1f"|format(stats.average_score) }}/10</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Best Score</h3>
+                        <p class="stat-value">{{ stats.best_score }}/10</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total Questions</h3>
+                        <p class="stat-value">{{ stats.total_questions }}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% if stats.by_role %}
+            <div class="progress-section">
+                <h2><i class="fas fa-briefcase"></i> Performance by Role</h2>
+                <div class="role-grid">
+                    {% for role, data in stats.by_role.items() %}
+                    <div class="role-card">
+                        <h3>{{ role }}</h3>
+                        <div class="role-stats">
+                            <div class="role-stat">
+                                <label>Interviews:</label>
+                                <span>{{ data.count }}</span>
+                            </div>
+                            <div class="role-stat">
+                                <label>Average Score:</label>
+                                <span>{{ data.avg_score }}/10</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if stats.by_difficulty %}
+            <div class="progress-section">
+                <h2><i class="fas fa-chart-line"></i> Performance by Difficulty</h2>
+                <div class="difficulty-grid">
+                    {% for difficulty, data in stats.by_difficulty.items() %}
+                    <div class="difficulty-card difficulty-{{ difficulty.lower() }}">
+                        <h3>{{ difficulty }}</h3>
+                        <div class="difficulty-stats">
+                            <div class="difficulty-stat">
+                                <label>Interviews:</label>
+                                <span>{{ data.count }}</span>
+                            </div>
+                            <div class="difficulty-stat">
+                                <label>Average Score:</label>
+                                <span>{{ data.avg_score }}/10</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if stats.total_interviews == 0 %}
+            <div class="empty-state">
+                <i class="fas fa-inbox"></i>
+                <h3>No Interviews Yet</h3>
+                <p>Start practicing to see your progress!</p>
+                <a href="{{ url_for('dashboard') }}" class="btn start-btn">
+                    <i class="fas fa-play-circle"></i> Start Interview
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <style>
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .role-card, .difficulty-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .role-card h3, .difficulty-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .role-stats, .difficulty-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .role-stat, .difficulty-stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .role-stat:last-child, .difficulty-stat:last-child {
+            border-bottom: none;
+        }
+
+        .difficulty-easy {
+            border-left: 4px solid #4CAF50;
+        }
+
+        .difficulty-medium {
+            border-left: 4px solid #FFC107;
+        }
+
+        .difficulty-hard {
+            border-left: 4px solid #F44336;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h3 {
+            color: #666;
+            margin: 20px 0 10px 0;
+        }
+
+        .empty-state p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+    </style>
+</body>
+</html>

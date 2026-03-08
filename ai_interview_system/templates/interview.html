@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview - AI Interview Preparation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-question-circle"></i> Interview Session</h1>
+            <p><i class="fas fa-list-ol"></i> Question {{ index }} of {{ total }}</p>
+            <div class="timer-container">
+                <i class="fas fa-clock"></i> Time Remaining: <span id="time">120</span> seconds
+            </div>
+        </header>
+        <div class="question-container">
+            <h2>{{ question }}</h2>
+        </div>
+        <form method="POST" action="{{ url_for('submit_answer') }}">
+            <div class="form-group">
+                <label for="answer"><i class="fas fa-edit"></i> Your Answer:</label>
+                <div class="answer-input-wrapper">
+                    <textarea id="answer" name="answer" rows="10" placeholder="Type your answer here..." required></textarea>
+                    <button type="button" id="voice-btn" class="btn btn-secondary" title="Use Voice Input">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-arrow-right"></i> Submit Answer
+            </button>
+        </form>
+        <div class="progress">
+            <div class="progress-bar" style="width: {{ (index / total) * 100 }}%"></div>
+        </div>
+    </div>
+
+    <script>
+        // simple countdown timer for each question (2 minutes)
+        document.addEventListener('DOMContentLoaded', function() {
+            let timeLeft = 120; // seconds
+            const timeEl = document.getElementById('time');
+            const form = document.querySelector('form');
+            const interval = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    alert('Time is up! Your answer will be submitted automatically.');
+                    form.submit();
+                } else {
+                    timeEl.textContent = timeLeft;
+                    timeLeft--;
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

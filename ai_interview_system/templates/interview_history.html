@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview History - AI Interview Preparation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-history"></i> Interview History</h1>
+            <nav class="nav-links">
+                <a href="{{ url_for('dashboard') }}" class="btn nav-btn">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="{{ url_for('view_progress') }}" class="btn nav-btn">
+                    <i class="fas fa-chart-line"></i> Progress
+                </a>
+                <a href="{{ url_for('logout') }}" class="btn logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </header>
+
+        <div class="history-container">
+            {% if interviews %}
+                <div class="history-list">
+                    <h2><i class="fas fa-book"></i> Your Interviews</h2>
+                    {% for interview in interviews %}
+                        <div class="history-item">
+                            <div class="history-header">
+                                <div class="history-title">
+                                    <h3><i class="fas fa-briefcase"></i> {{ interview.role }}</h3>
+                                    <p class="difficulty">
+                                        {% if interview.difficulty == 'Easy' %}
+                                            <span class="badge easy"><i class="fas fa-circle"></i> Easy</span>
+                                        {% elif interview.difficulty == 'Medium' %}
+                                            <span class="badge medium"><i class="fas fa-circle"></i> Medium</span>
+                                        {% else %}
+                                            <span class="badge hard"><i class="fas fa-circle"></i> Hard</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                <div class="history-score">
+                                    <div class="score-display">
+                                        <span class="score">{{ "%.1f"|format(interview.overall_score) }}</span>
+                                        <span class="out-of">/10</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="history-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ interview.timestamp }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>{{ (interview.questions | length) if interview.questions else 'N/A' }} Questions</span>
+                                </div>
+                            </div>
+
+                            <div class="history-actions">
+                                <a href="{{ url_for('interview_details', interview_id=interview.id) }}" class="btn view-btn">
+                                    <i class="fas fa-eye"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <h2>No Interview History</h2>
+                    <p>You haven't completed any interviews yet. Start practicing to build your history!</p>
+                    <a href="{{ url_for('dashboard') }}" class="btn start-btn">
+                        <i class="fas fa-play-circle"></i> Start Interview
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <style>
+        .history-list {
+            max-width: 900px;
+        }
+
+        .history-item {
+            background: white;
+            border-left: 5px solid #2196F3;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .history-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .history-title h3 {
+            margin: 0 0 8px 0;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .history-title .difficulty {
+            display: flex;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .badge.easy {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .badge.medium {
+            background: #ffe0b2;
+            color: #e65100;
+        }
+
+        .badge.hard {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        .out-of {
+            font-size: 16px;
+            color: #999;
+        }
+
+        .history-details {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-item i {
+            color: #2196F3;
+            width: 16px;
+        }
+
+        .history-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .view-btn {
+            background: #2196F3;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .view-btn:hover {
+            background: #1976D2;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .empty-state i {
+            font-size: 64px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h2 {
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .empty-state p {
+            color: #999;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - AI Interview Preparation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-user"></i> My Profile</h1>
+            <nav class="nav-links">
+                <a href="{{ url_for('dashboard') }}" class="btn nav-btn">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="{{ url_for('view_progress') }}" class="btn nav-btn">
+                    <i class="fas fa-chart-line"></i> Progress
+                </a>
+                <a href="{{ url_for('interview_history') }}" class="btn nav-btn">
+                    <i class="fas fa-history"></i> History
+                </a>
+                <a href="{{ url_for('account_settings') }}" class="btn nav-btn">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+                <a href="{{ url_for('logout') }}" class="btn logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </header>
+
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-info">
+                    <h2>{{ name }}</h2>
+                    <p class="email">{{ email }}</p>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <i class="fas fa-user-check"></i>
+                    <div class="stat-content">
+                        <h3>Account Status</h3>
+                        <p>Active Member</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="stat-content">
+                        <h3>Member Since</h3>
+                        <p>Joined Recently</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-brain"></i>
+                    <div class="stat-content">
+                        <h3>Interviews Completed</h3>
+                        <p>{{ interview_count }} Practice Sessions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <h3><i class="fas fa-cogs"></i> Account Settings</h3>
+                <div class="action-buttons">
+                    <a href="{{ url_for('edit_profile') }}" class="btn action-btn">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </a>
+                    <a href="{{ url_for('view_progress') }}" class="btn action-btn">
+                        <i class="fas fa-chart-line"></i> View Progress
+                    </a>
+                    <a href="{{ url_for('interview_history') }}" class="btn action-btn">
+                        <i class="fas fa-history"></i> Interview History
+                    </a>
+                    <a href="{{ url_for('account_settings') }}" class="btn action-btn">
+                        <i class="fas fa-lock"></i> Change Password
+                    </a>
+                </div>
+            </div>
+
+            <div class="profile-tips">
+                <h3><i class="fas fa-lightbulb"></i> Interview Preparation Tips</h3>
+                <ul class="tips-list">
+                    <li><i class="fas fa-check-circle"></i> Practice regularly with different difficulty levels</li>
+                    <li><i class="fas fa-check-circle"></i> Focus on both technical and behavioral questions</li>
+                    <li><i class="fas fa-check-circle"></i> Review your feedback to identify improvement areas</li>
+                    <li><i class="fas fa-check-circle"></i> Take breaks between practice sessions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

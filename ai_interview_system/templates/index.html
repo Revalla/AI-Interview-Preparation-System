@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interview Preparation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 AI Interview Preparation</h1>
+            <p>Welcome to the AI-powered interview simulator.</p>
+        </header>
+        <div class="auth-links">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+            <a href="{{ url_for('signup') }}" class="btn btn-secondary">Sign Up</a>
+        </div>
+    </div>
+</body>
+</html>
