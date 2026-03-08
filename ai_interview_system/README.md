@@ -109,7 +109,7 @@ The SQLite database file (`database.db`) will be created automatically when the 
 python app.py
 ```
 
-7. **Open http://127.0.0.1:5000 in your browser**
+7. **Open [http://127.0.0.1:5000](http://localhost:5000) in your browser**
 
 ## Usage
 
